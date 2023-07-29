@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AccountService} from '../../_services';
 import {first} from 'rxjs/operators';
 
-@Component({ templateUrl: 'login.component.html' })
+@Component({ templateUrl: 'login.component.html',   styleUrls: ['./login.component.css'] })
 export class LoginComponent implements OnInit {
   form!: FormGroup;
   loading = false;

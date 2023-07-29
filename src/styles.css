@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+div.container{
+    background-color: #E5E5E5;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.card-body{
+    background-color: #E5E5E5;
+}
+h1.card-header{
+    background-color: #E5E5E5;
+    font-size: 5rem;
+    color: #234B57;
+}
+label.form-label{
+    color: #234B57;
+}
+a.btn.btn-link{
+    color: #234B57;
+}
+button.btn.btn-primary{
+    background-color: #20DF7F;
+    color: #234B57;
+    border: none;
+    font-size: 18px; 
+    padding: 10px 20px; 
+}
+button.btn.btn-primary:hover {
+    background-color: #234B57;
+    color: whitesmoke;
+    /* Estilos adicionales para cuando el cursor esté sobre el botón */
+  }
+
+input.form-control{
+    /* background-color: #234B57;
+    color: whitesmoke; */
+}

@@ -5,6 +5,7 @@ import {LayoutComponent} from './layout/layout.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {SecurityRoutingModule} from './security-routing.module';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {SecurityRoutingModule} from './security-routing.module';
   declarations: [
     LayoutComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ForgotpassComponent
   ]
 })
 export class SecurityModule { }
