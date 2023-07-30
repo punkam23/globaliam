@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Rol 1",
+    "description": "Descripcion del Rol numero 1",
+    "status": "Activo",
+    "permisos": "Permiso 1"
+  },
+  {
+    "id": 2,
+    "name": "Rol 2",
+    "description": "Descripcion del Rol numero 2",
+    "status": "Activo",
+    "permisos": "Permiso 1, Permiso 2"
+  },
+  {
+    "id": 3,
+    "name": "Rol 3",
+    "description": "Descripcion del Rol numero 3",
+    "status": "Activo",
+    "permisos": "Permiso 3"
+  }
+]
