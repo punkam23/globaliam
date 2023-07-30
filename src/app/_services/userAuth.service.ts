@@ -44,6 +44,10 @@ export class AccountService {
     return this.http.post(`${environment.apiUrl}/users/register`, user);
   }
 
+  forgotpass(username: string,) {
+    return this.http.post(`${environment.apiUrl}/users/register`, username);
+  }
+
   getAll() {
     return this.http.get<User[]>(`${environment.apiUrl}/users`);
   }
