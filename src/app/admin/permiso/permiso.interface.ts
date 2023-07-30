@@ -1,4 +1,4 @@
-export interface UserInterface {
+export interface PermisoInterface {
   id?: string;
   name?: string;
   description?: string;

@@ -1,4 +1,4 @@
-export interface UserInterface {
+export interface AplicacionInterface {
   id?: string;
   name?: string;
   description?: string;
