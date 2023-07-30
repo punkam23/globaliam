@@ -8,6 +8,11 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {fakeBackendProvider} from './_helpers';
 import {ErrorInterceptor, JwtInterceptor} from './_helpers';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,10 +20,15 @@ import {ErrorInterceptor, JwtInterceptor} from './_helpers';
     HomeComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

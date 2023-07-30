@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Usuario 1",
+    "sistemas": "Sistema 1",
+    "roles": "Role 1",
+    "status": "activo",
+    "email": "usuario1@test.com"
+  },
+  {
+    "id": 2,
+    "name": "Usuario 2",
+    "sistemas": "Sistema 1, Sistema 2",
+    "roles": "Role 1, Role 2",
+    "status": "activo",
+    "email": "usuario2@test.com"
+  },
+  {
+    "id": 3,
+    "name": "Usuario 3",
+    "sistemas": "Sistema 2, Sistema 3",
+    "roles": "Role 2, Role 3",
+    "status": "activo",
+    "email": "usuario3@test.com"
+  }
+]

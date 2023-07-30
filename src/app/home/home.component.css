@@ -1,0 +1,13 @@
+.container {
+  color: black;
+}
+
+.example-card {
+  width: 300px;
+  height: 250px;
+  margin: 10px;
+}
+
+.banner {
+  height: 400px;
+}

@@ -27,8 +27,8 @@ button.btn.btn-primary{
     background-color: #20DF7F;
     color: #234B57;
     border: none;
-    font-size: 18px; 
-    padding: 10px 20px; 
+    font-size: 18px;
+    padding: 10px 20px;
 }
 button.btn.btn-primary:hover {
     background-color: #234B57;
@@ -40,3 +40,6 @@ input.form-control{
     /* background-color: #234B57;
     color: whitesmoke; */
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

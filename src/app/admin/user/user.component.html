@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="users$ | async" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre del Usuaio </th>
+    <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="sistemas">
+    <th mat-header-cell *matHeaderCellDef> Sistemas </th>
+    <td mat-cell *matCellDef="let user"> {{user.sistemas}} </td>
+  </ng-container>
+  <ng-container matColumnDef="roles">
+    <th mat-header-cell *matHeaderCellDef> Roles </th>
+    <td mat-cell *matCellDef="let user"> {{user.roles}} </td>
+  </ng-container>
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let user"> {{user.status}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="usersColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: usersColumns;"></tr>
+</table>
