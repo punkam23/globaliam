@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" *ngIf="!showNotification && !submitted && !loading || f.username.errors">
             <h3 class="card-title text-center mb-4">Recuperar Contraseña</h3>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
@@ -21,8 +21,14 @@
             </form>
           </div>
         </div>
-        <div class="alert alert-success mt-3" *ngIf="showNotification && !f.username.errors && submitted && !loading">
-            {{ notificationMessage }}
+        <div class="card-body" *ngIf="showNotification && !f.username.errors && submitted && !loading">
+          <h1 class="card-header text-center mb-4">Listo!</h1>
+            <p class="note">{{ notificationMessage }}</p> 
+              <div class="d-grid gap-2">
+                <button [disabled]="loading" class="btn btn-primary" routerLink="../login"> 
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                  Regresar</button>
+              </div>
         </div>
       </div>
     </div>

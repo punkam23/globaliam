@@ -44,7 +44,7 @@ export class ForgotpassComponent implements OnInit {
     if (recoverySuccess) {
       this.showNotification = true;
       this.notificationMessage =
-        "Correo de recuperación enviado correctamente.";
+        "Enviamos un correo con las indicaciones necesarias para restablecer tu contraseña";
     } else {
       this.showNotification = true;
       this.notificationMessage =
