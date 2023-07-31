@@ -15,11 +15,11 @@
 <!--&lt;!&ndash;  <alert></alert>&ndash;&gt;-->
 <!--  <router-outlet></router-outlet>-->
 <!--</div>-->
-<mat-sidenav-container class="example-container" *ngIf="user" >
-  <mat-sidenav mode="side" class="navbar-items" opened>
+<mat-sidenav-container class="example-container" *ngIf="user">
+  <mat-sidenav mode="side" class="navbar-items right-panel-container" opened>
     <div class="navbar-home"></div>
     <button mat-button class="w-100 navbar-button" routerLink="/home" routerLinkActive="active">Dashboard</button>
-    <button mat-button class="w-100 navbar-button" >Centro de Peticiones</button>
+    <button mat-button class="w-100 navbar-button">Centro de Peticiones</button>
     <button mat-button class="w-100 navbar-button">Aprobaciones</button>
     <button mat-button class="w-100 navbar-button" routerLink="/admin" routerLinkActive="active">Administración</button>
     <hr>
@@ -27,9 +27,21 @@
     <button mat-button class="w-100 navbar-button">Auditoría</button>
     <button mat-button class="w-100 navbar-button-logout" (click)="logout()">Logout</button>
   </mat-sidenav>
-  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar-content">
+      <mat-toolbar-row>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon1" aria-hidden="false" aria-label="Example account icon">search</mat-icon>
+        <mat-icon class="example-icon2" aria-hidden="false" aria-label="Example account icon">notification_important</mat-icon>
+        <span class="span-name">{{' | ' + user.firstName + ' '+user.lastName}}</span>
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example account icon">account_box</mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>
 <!-- main app container -->
+
 <div class="app-container" [ngClass]="{ 'bg-light': user }">
   <router-outlet></router-outlet>
 </div>

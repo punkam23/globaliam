@@ -2,7 +2,16 @@
   text-align: center;
 }
 
+.icon-title-center {
+  color: red;
+  text-align: center;
+}
+
 .title-center-content {
   justify-content: center;
   text-align: center;
+}
+
+.dialog-container {
+  background: white;
 }

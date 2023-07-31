@@ -1,9 +1,19 @@
 <div class="p-4">
   <div class="container">
-    <h1>Hi {{user?.firstName}}!</h1>
-    <p>You're logged in with Angular 14!!</p>
-    <div class="banner"></div>
-    <div class=" d-flex flex-row">
+    <mat-card class="card-style">
+      <mat-card-content class="content1">
+        <div class="sub-content1">
+          <h1>Bienvenido {{user?.firstName}}!</h1>
+          <button mat-raised-button class="crear-button">Crear nueva solicitud</button>
+        </div>
+      </mat-card-content>
+      <mat-card-content class="content1" >
+        <div>
+          <img class="image-position" src="assets/images/user-dash.svg">
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <div class="d-flex flex-row justify-content-evenly secondary-cards">
       <mat-card class="example-card p-2">
         <mat-card-header>
           <mat-card-title>Mis Peticiones</mat-card-title>

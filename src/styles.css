@@ -12,6 +12,16 @@ div.container{
 .card-body{
     background-color: #E5E5E5;
 }
+
+.mat-card {
+  background: white;
+  color: black;
+}
+
+.mat-dialog-container {
+  background: white;
+  color: black;
+}
 h1.card-header{
     background-color: #E5E5E5;
     font-size: 5rem;
