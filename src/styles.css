@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-div.container{
+div.containerX{
     background-color: #E5E5E5;
     display: grid;
     grid-template-columns: 1fr;
@@ -29,6 +29,10 @@ h1.card-header{
 }
 label.form-label{
     color: #234B57;
+}
+p.note{
+    color: #234B57;
+    font-size: 18px;
 }
 a.btn.btn-link{
     color: #234B57;
