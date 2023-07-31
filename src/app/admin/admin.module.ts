@@ -10,6 +10,8 @@ import {MatTableModule} from '@angular/material/table';
 import {RolComponent} from './rol/rol.component';
 import {AplicacionComponent} from './aplicacion/aplicacion.component';
 import {PermisoComponent} from './permiso/permiso.component';
+import {AplicacionDialogComponent} from './aplicacion/aplicacion-dialog/aplicacion-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -18,14 +20,17 @@ import {PermisoComponent} from './permiso/permiso.component';
     AdminRoutingModule,
     MatToolbarModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   declarations: [
     AdminLayoutComponent,
     UserComponent,
     RolComponent,
     AplicacionComponent,
-    PermisoComponent
-  ]
+    PermisoComponent,
+    AplicacionDialogComponent
+  ],
+  entryComponents: [AplicacionDialogComponent]
 })
 export class AdminModule { }
