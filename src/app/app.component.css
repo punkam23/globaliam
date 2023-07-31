@@ -73,7 +73,48 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #eee;
+  background: #E5E5E5;
+}
+
+.span-name{
+  font-size: 20px;
+  color: #093545;
+}
+
+.example-icon1{
+  color: #093545;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  left: 10px;
+}
+
+.example-icon2{
+  color: #267693;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  left: 10px;
+}
+
+.example-icon {
+  color: #093545;
+  font-size: 70px;
+  width: 70px;
+  height: 70px;
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-content {
+  background: #E5E5E5;
+}
+
+.right-panel-container {
+  background: #296763;
 }
 .navbar-button{
   text-align: left;

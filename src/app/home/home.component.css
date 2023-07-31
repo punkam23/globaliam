@@ -7,7 +7,37 @@
   height: 250px;
   margin: 10px;
 }
+.secondary-cards {
+  margin-top: 150px;
+}
 
-.banner {
+.content1 {
+  color: white;
+  flex: auto;
+  .sub-content1 {
+    margin-left: 20px;
+    margin-top: 120px;
+    .crear-button {
+      margin-top: 50px;
+      background: #2E3647;
+    }
+  }
+}
+
+
+
+.card-style {
   height: 400px;
+  background: #777A7F;
+  margin-bottom: 60px;
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.image-position {
+  width: 450px;
+  position: absolute;
+  bottom: -11px;
+  right: 40px;
 }

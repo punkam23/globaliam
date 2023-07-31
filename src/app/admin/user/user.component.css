@@ -1,4 +1,11 @@
 table {
   width: 100%;
+  background: white;
+  .mat-header-cell {
+    color: black;
+  }
+  .mat-cell{
+    color: black;
+  }
 }
 
