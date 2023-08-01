@@ -1,32 +1,36 @@
 <div class="loging-section">
-<div class="card">
-  <h1 class="card-header">Inicio de Sesion</h1>
-  <div class="card-body">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="mb-3">
-        <label class="form-label">Inicia sesion y comienza a gestionar los permisos de usuarios!</label>
-        <input type="text" formControlName="username" placeholder="usuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-          <div *ngIf="f.username.errors.required">El nombre de usuario es requerido</div>
+  <div class="card">
+    <h1 class="card-header">Inicio de Sesion</h1>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label class="form-label">Inicia sesion y comienza a gestionar los permisos de usuarios!</label>
+          <input type="text" formControlName="username" placeholder="usuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">El nombre de usuario es requerido</div>
+          </div>
         </div>
-      </div>
-      <div class="mb-3">
-        <input type="password" placeholder="contraseña" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">La contraseña es requerida</div>
+        <div class="mb-3">
+          <input type="password" placeholder="contraseña" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">La contraseña es requerida</div>
+          </div>
         </div>
-      </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-between">
-        <a routerLink="../register" class="btn btn-link">Registrarme</a>
-        <a routerLink="../forgotpass" class="btn btn-link">Olvide mi contraseña</a>
-      </div>
-      <div class="d-grid gap-2">
-        <button [disabled]="loading" class="btn btn-primary">
-          <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-          Iniciar Sesion
-        </button>
-      </div>
-    </form>
+        <div class="d-grid gap-2 d-md-flex justify-content-between">
+          <a routerLink="../register" class="btn btn-link">Registrarme</a>
+          <a routerLink="../forgotpass" class="btn btn-link">Olvide mi contraseña</a>
+        </div>
+        <div class="d-grid gap-2">
+          <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+            Iniciar Sesion
+          </button>
+        </div>
+      </form>
+    </div>
+
   </div>
-</div>
+  <div class="card-footer text-muted text-center footer-with-svg">
+    <div class="svg-background"></div>
+  </div>
 </div>
