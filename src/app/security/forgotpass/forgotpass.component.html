@@ -1,9 +1,7 @@
 <div class="fotgot-section">
-    <div class="row justify-content-center">
-      <div class="col-md-4">
         <div class="card">
           <div class="card-body" *ngIf="!showNotification && !submitted && !loading || f.username.errors">
-            <h3 class="card-title text-center mb-4">Recuperar Contraseña</h3>
+            <h1 class="card-title text-center mb-4">Recuperar Contraseña</h1>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                     <label for="email" class="form-label">Ingresa tu correo electrónico, para poder enviarte el link de recuperación</label>
@@ -29,7 +27,8 @@
                   <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
                   Regresar</button>
               </div>
-        </div>
-      </div>
+    </div>
+    <div class="card-footer text-muted text-center footer-with-svg">
+      <div class="svg-background"></div>
     </div>
   </div>
