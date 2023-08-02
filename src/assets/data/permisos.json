@@ -2,19 +2,19 @@
   {
     "id": 1,
     "name": "Permiso 1",
-    "description": "Descripcion del Permiso numero 1",
+    "description": "Descripción del Permiso numero 1",
     "status": "Activo"
   },
   {
     "id": 2,
     "name": "Permiso 2",
-    "description": "Descripcion del Permiso numero 2",
+    "description": "Descripción del Permiso numero 2",
     "status": "Activo"
   },
   {
     "id": 3,
     "name": "Permiso 3",
-    "description": "Descripcion del Permiso numero 3",
+    "description": "Descripción del Permiso numero 3",
     "status": "Activo"
   }
 ]

@@ -14,3 +14,11 @@ table {
   color: black;
   font-size: 18px;
 }
+
+.table-buttons:hover {
+  background: grey;
+}
+
+.table-buttons:focus {
+  background: lightgray;
+}

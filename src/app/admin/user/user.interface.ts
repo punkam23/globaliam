@@ -5,4 +5,5 @@ export interface UserInterface {
   roles?: string;
   status?: string;
   email?: string;
+  autenticacion?: string;
 }

@@ -5,6 +5,7 @@
     "sistemas": "Sistema 1",
     "roles": "Role 1",
     "status": "activo",
+    "autenticacion": "MFA / Mensaje de Texto",
     "email": "usuario1@test.com"
   },
   {
@@ -13,6 +14,7 @@
     "sistemas": "Sistema 1, Sistema 2",
     "roles": "Role 1, Role 2",
     "status": "activo",
+    "autenticacion": "MFA / Llamada",
     "email": "usuario2@test.com"
   },
   {
@@ -21,6 +23,7 @@
     "sistemas": "Sistema 2, Sistema 3",
     "roles": "Role 2, Role 3",
     "status": "activo",
+    "autenticacion": "MFA / Correo",
     "email": "usuario3@test.com"
   }
 ]

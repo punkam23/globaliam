@@ -15,3 +15,11 @@
 .dialog-container {
   background: white;
 }
+
+.dialog-button:hover {
+  background: grey;
+}
+
+.dialog-button:focus {
+  background: lightgray;
+}
