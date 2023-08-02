@@ -5,11 +5,15 @@ import {Observable} from 'rxjs';
 @Component({ templateUrl: 'user.component.html', styleUrls: ['user.component.css'] })
 export class UserComponent implements OnInit {
   users$: Observable<any>;
-  usersColumns: string[] = ['name', 'sistemas', 'roles', 'email', 'status'];
+  usersColumns: string[] = ['name', 'sistemas', 'roles', 'email', 'autenticacion', 'status'];
 
   constructor(private userService: UserService) {
   }
   public ngOnInit(): void {
     this.users$ = this.userService.getUsers();
+  }
+
+  test() {
+    console.log('test');
   }
 }

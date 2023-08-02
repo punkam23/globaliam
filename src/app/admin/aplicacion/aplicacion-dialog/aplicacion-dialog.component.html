@@ -1,11 +1,11 @@
 <div class="dialog-container">
 <h1 mat-dialog-title class="fa fa-trash-o icon-title-center"></h1>
-<h1 mat-dialog-title class="title-center">Desea eliminar el Sistema</h1>
+<h1 mat-dialog-title class="title-center">Desea eliminar el Sistema?</h1>
 <div mat-dialog-content class="title-center">
-  El sistema seleccionado sera eliminado
+  El sistema seleccionado será eliminado
 </div>
 <div mat-dialog-actions class="title-center-content">
-  <button mat-button (click)="onNoClick()">No</button>
-  <button mat-button [mat-dialog-close]="data.id" cdkFocusInitial>Si</button>
+  <button mat-button class="dialog-button" (click)="onNoClick()">No</button>
+  <button mat-button class="dialog-button" [mat-dialog-close]="data.id" cdkFocusInitial>Si</button>
 </div>
 </div>

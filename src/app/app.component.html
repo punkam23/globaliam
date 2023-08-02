@@ -1,20 +1,4 @@
-<!--<nav class="navbar navbar-collapse navbar-dark bg-dark px-3 fixed-left" *ngIf="user">-->
-<!--  <div class="navbar-nav">-->
-<!--    <li class="nav-item">-->
-<!--      <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>-->
-<!--    </li>-->
-<!--    <li class="nav-item">-->
-<!--    <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>-->
-<!--    </li>-->
-<!--&lt;!&ndash;      <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>&ndash;&gt;-->
-<!--  </div>-->
-<!--</nav>-->
 
-<!--&lt;!&ndash; main app container &ndash;&gt;-->
-<!--<div class="app-container" [ngClass]="{ 'bg-light': user }">-->
-<!--&lt;!&ndash;  <alert></alert>&ndash;&gt;-->
-<!--  <router-outlet></router-outlet>-->
-<!--</div>-->
 <mat-sidenav-container class="example-container" *ngIf="user">
   <mat-sidenav mode="side" class="navbar-items right-panel-container" opened>
     <div class="navbar-home"></div>
@@ -25,7 +9,7 @@
     <hr>
     <button mat-button class="w-100 navbar-button">Ayuda</button>
     <button mat-button class="w-100 navbar-button">Auditoría</button>
-    <button mat-button class="w-100 navbar-button-logout" (click)="logout()">Logout</button>
+    <button mat-button class="w-100 navbar-button-logout" (click)="logout()">Cerrar Session</button>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="toolbar-content">
@@ -37,11 +21,16 @@
         <mat-icon class="example-icon" aria-hidden="false" aria-label="Example account icon">account_box</mat-icon>
       </mat-toolbar-row>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <ng-container *ngTemplateOutlet="template"></ng-container>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <!-- main app container -->
 
-<div class="app-container" [ngClass]="{ 'bg-light': user }">
+<div *ngIf="!user">
+  <ng-container *ngTemplateOutlet="template"></ng-container>
+</div>
+<ng-template #template>
+<div>
   <router-outlet></router-outlet>
 </div>
+</ng-template>
