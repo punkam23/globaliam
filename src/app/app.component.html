@@ -2,14 +2,14 @@
 <mat-sidenav-container class="example-container" *ngIf="user">
   <mat-sidenav mode="side" class="navbar-items right-panel-container" opened>
     <div class="navbar-home"></div>
-    <button mat-button class="w-100 navbar-button" routerLink="/home" routerLinkActive="active">Dashboard</button>
+    <button mat-button class="w-100 navbar-button" routerLink="/home" routerLinkActive="active">Panel de Control</button>
     <button mat-button class="w-100 navbar-button">Centro de Peticiones</button>
     <button mat-button class="w-100 navbar-button">Aprobaciones</button>
     <button mat-button class="w-100 navbar-button" routerLink="/admin" routerLinkActive="active">Administración</button>
     <hr>
     <button mat-button class="w-100 navbar-button">Ayuda</button>
     <button mat-button class="w-100 navbar-button">Auditoría</button>
-    <button mat-button class="w-100 navbar-button-logout" (click)="logout()">Cerrar Session</button>
+    <button mat-button class="w-100 navbar-button-logout" (click)="logout()">Cerrar Sesión</button>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="toolbar-content">
