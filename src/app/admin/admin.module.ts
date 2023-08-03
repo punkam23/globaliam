@@ -14,23 +14,22 @@ import {AplicacionDialogComponent} from './aplicacion/aplicacion-dialog/aplicaci
 import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    AdminRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatTableModule,
-    MatDialogModule
-  ],
-  declarations: [
-    AdminLayoutComponent,
-    UserComponent,
-    RolComponent,
-    AplicacionComponent,
-    PermisoComponent,
-    AplicacionDialogComponent
-  ],
-  entryComponents: [AplicacionDialogComponent]
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        AdminRoutingModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatTableModule,
+        MatDialogModule
+    ],
+    declarations: [
+        AdminLayoutComponent,
+        UserComponent,
+        RolComponent,
+        AplicacionComponent,
+        PermisoComponent,
+        AplicacionDialogComponent
+    ]
 })
 export class AdminModule { }

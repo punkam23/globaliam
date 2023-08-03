@@ -127,7 +127,6 @@
       }
     }
   },
-  "defaultProject": "globaliam",
   "cli": {
     "analytics": "4752ce1f-1b50-4f3e-aeb1-0809c8a2b01c"
   }

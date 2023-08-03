@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AccountService } from "../../_services";
 import { first } from "rxjs/operators";
@@ -10,14 +10,14 @@ import { first } from "rxjs/operators";
   styleUrls: ["./forgotpass.component.css"],
 })
 export class ForgotpassComponent implements OnInit {
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   loading = false;
   submitted = false;
   showNotification: boolean = false;
   notificationMessage: string = "";
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private accountService: AccountService
