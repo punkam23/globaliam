@@ -12,7 +12,7 @@ export class AplicacionComponent implements OnInit {
   aplicaciones$: Observable<any>;
   aplicacionesColumns: string[] = ['name', 'description', 'status', 'roles', 'actions'];
 
-  @ViewChild(MatTable, {static: false }) table: MatTable<AplicacionInterface>;
+  @ViewChild(MatTable) table: MatTable<AplicacionInterface>;
   constructor(private aplicacionService: AplicacionService, public dialog: MatDialog) {
   }
   public ngOnInit(): void {
