@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { getFirestore } from '@angular/fire/firestore';
+
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 import {HomeComponent} from './home';
 import {AppRoutingModule} from './app-routing.module';
@@ -32,7 +38,9 @@ import {MatIconModule} from "@angular/material/icon";
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth())
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
