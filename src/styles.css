@@ -18,11 +18,16 @@ div.containerX{
   color: black;
 }
 
+.mat-select-value-text {
+  color: black;
+}
+
 .mat-dialog-container {
   border: 2px solid gray;
   background: white;
   color: black;
 }
+
 h1.card-header{
     background-color: #E5E5E5;
     font-size: 5rem;

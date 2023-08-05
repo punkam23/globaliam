@@ -1,0 +1,29 @@
+.title-center {
+  text-align: center;
+}
+
+.icon-title-center {
+  color: red;
+  text-align: center;
+}
+
+.title-center-content {
+  justify-content: center;
+  text-align: center;
+}
+
+.dialog-container {
+  background: white;
+}
+
+.dialog-button {
+  border: 2px solid gray;
+}
+
+.dialog-button:hover {
+  background: grey;
+}
+
+.dialog-button:focus {
+  background: mediumseagreen;
+}

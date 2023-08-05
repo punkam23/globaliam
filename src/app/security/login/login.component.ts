@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AccountService} from '../../_services';
 import {first} from 'rxjs/operators';
+import {AlertService} from '../../_services/alert.service';
 
 @Component({ templateUrl: 'login.component.html',   styleUrls: ['./login.component.css'] })
 export class LoginComponent implements OnInit {
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private accountService: AccountService,
-    // private alertService: AlertService
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     // reset alerts on submit
-    // this.alertService.clear();
+    this.alertService.clear();
 
     // stop here if form is invalid
     if (this.form.invalid) {
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl(returnUrl);
         },
         error: error => {
-          // this.alertService.error(error);
+          this.alertService.error('Usuario Incorrecto: El inicio de sesión falló.');
           this.loading = false;
         }
       });

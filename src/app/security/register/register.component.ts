@@ -3,8 +3,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AccountService} from '../../_services';
 import {first} from 'rxjs/operators';
+import {AlertService} from '../../_services/alert.service';
 
-@Component({ templateUrl: 'register.component.html',  styleUrls: ["./register.component.css"],})
+@Component({ templateUrl: 'register.component.html',  styleUrls: ['./register.component.css'], })
 export class RegisterComponent implements OnInit {
   form!: FormGroup;
   loading = false;
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private accountService: AccountService,
-    // private alertService: AlertService
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -50,7 +51,7 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['../login'], { relativeTo: this.route });
         },
         error: error => {
-          // this.alertService.error(error);
+          this.alertService.error(error);
           this.loading = false;
         }
       });
