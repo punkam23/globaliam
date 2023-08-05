@@ -41,10 +41,11 @@ export class AccountService {
   }
 
   register(user: User) {
+    user.state = 'activo';
     return this.http.post(`${environment.apiUrl}/users/register`, user);
   }
 
-  forgotpass(username: string,) {
+  forgotpass(username: string) {
     return this.http.post(`${environment.apiUrl}/users/register`, username);
   }
 
@@ -57,19 +58,22 @@ export class AccountService {
   }
 
   update(id: string, params: any) {
-    return this.http.put(`${environment.apiUrl}/users/${id}`, params)
-      .pipe(map(x => {
-        // update stored user if the logged in user updated their own record
+    return this.http.put(`${environment.apiUrl}/users/${id}`, params).pipe()
+      .subscribe(() => {
+      //   map(x => {
+      //   // update stored user if the logged in user updated their own record
         if ( id === this.userValue.id ) {
           // update local storage
           const user = { ...this.userValue, ...params };
-          localStorage.setItem('user', JSON.stringify(user));
+          // localStorage.setItem('user', JSON.stringify(user));
 
           // publish updated user to subscribers
           this.userSubject.next(user);
         }
-        return x;
-      }));
+      }
+      //   return x;
+      // })
+      );
   }
 
   delete(id: string) {

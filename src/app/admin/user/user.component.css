@@ -7,6 +7,22 @@ table {
   }
   .mat-cell{
     color: black;
+    padding-left: 10px;
   }
+}
+
+.table-buttons {
+  background: white;
+  color: black;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.table-buttons:hover {
+  background: grey;
+}
+
+.table-buttons:focus {
+  background: mediumseagreen;
 }
 

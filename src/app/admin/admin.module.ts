@@ -12,6 +12,11 @@ import {AplicacionComponent} from './aplicacion/aplicacion.component';
 import {PermisoComponent} from './permiso/permiso.component';
 import {AplicacionDialogComponent} from './aplicacion/aplicacion-dialog/aplicacion-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {RemoveUserDialogComponent} from './user/remove-user-dialog/remove-user-dialog.component';
+import {EditUserDialogComponent} from './user/edit-user-dialog/edit-user-dialog.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   imports: [
@@ -21,7 +26,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     MatButtonModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   declarations: [
     AdminLayoutComponent,
@@ -29,8 +37,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     RolComponent,
     AplicacionComponent,
     PermisoComponent,
-    AplicacionDialogComponent
+    AplicacionDialogComponent,
+    RemoveUserDialogComponent,
+    EditUserDialogComponent
   ],
-  entryComponents: [AplicacionDialogComponent]
+  entryComponents: [AplicacionDialogComponent, RemoveUserDialogComponent, EditUserDialogComponent]
 })
 export class AdminModule { }

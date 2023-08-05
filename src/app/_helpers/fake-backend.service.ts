@@ -9,6 +9,7 @@ import {
 } from '@angular/common/http';
 import {Observable, of, throwError} from 'rxjs';
 import {delay, dematerialize, materialize} from 'rxjs/operators';
+import {User} from '../_models';
 
 const usersKey = 'global-iam-user';
 let users: any[] = JSON.parse(localStorage.getItem(usersKey)!) || [];
@@ -44,8 +45,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     function authenticate() {
       const { username, password } = body;
       const user = users.find(x => x.username === username && x.password === password);
+
       if (!user) {
-        return error('Username or password is incorrect');
+        return throwError('Username or password is incorrect');
+      }
+      if (user && user.state !== 'activo') {
+        return throwError('Username or password is incorrect');
       }
       return ok({
         ...basicDetails(user),
@@ -57,7 +62,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       const user = body;
 
       if (users.find(x => x.username === user.username)) {
-        return error('Username "' + user.username + '" is already taken');
+        return throwError('Username "' + user.username + '" is already taken');
       }
 
       user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
@@ -84,14 +89,22 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     function updateUser() {
       if (!isLoggedIn()) {return unauthorized(); }
 
-      const params = body;
+      const params: User = body;
       const user = users.find(x => x.id === idFromUrl());
 
       // only update password if entered
       if (!params.password) {
         delete params.password;
       }
-
+      if (!params.username) {
+        delete params.username;
+      }
+      if (!params.firstName) {
+        delete params.firstName;
+      }
+      if (!params.lastName) {
+        delete params.lastName;
+      }
       // update and save user
       Object.assign(user, params);
       localStorage.setItem(usersKey, JSON.stringify(users));
@@ -129,8 +142,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function basicDetails(user: any) {
-      const { id, username, firstName, lastName } = user;
-      return { id, username, firstName, lastName };
+      const { id, username, firstName, lastName, state } = user;
+      return { id, username, firstName, lastName, state };
     }
 
     function isLoggedIn() {

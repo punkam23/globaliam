@@ -16,12 +16,14 @@ import { RouterModule } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {InitialPageComponent} from './initial-page';
+import {AlertComponent} from './_alert';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    InitialPageComponent
+    InitialPageComponent,
+    AlertComponent,
   ],
   imports: [
     RouterModule,

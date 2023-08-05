@@ -27,6 +27,7 @@
 <!-- main app container -->
 
 <div *ngIf="!user">
+  <app-alert style="position: absolute"></app-alert>
   <ng-container *ngTemplateOutlet="template"></ng-container>
 </div>
 <ng-template #template>
