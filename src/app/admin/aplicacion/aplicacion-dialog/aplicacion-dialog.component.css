@@ -16,10 +16,14 @@
   background: white;
 }
 
+.dialog-button {
+  border: 2px solid gray;
+}
+
 .dialog-button:hover {
   background: grey;
 }
 
 .dialog-button:focus {
-  background: lightgray;
+  background: mediumseagreen;
 }
