@@ -22,21 +22,33 @@ export class AplicacionComponent implements OnInit {
   public openDialog(aplicacion: any): void {
     const dialogRef = this.dialog.open(AplicacionDialogComponent, {
       width: '250px',
+      ariaLabel: 'Eliminación de Sistema',
       data: aplicacion,
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.aplicaciones$ = this.aplicacionService.getAplicaciones().pipe(map((value) => {
-          console.log('tewsd ' + value);
-          const newvalue = value.filter(value2 => {
-            return value2.id !== result;
-          });
-          return newvalue;
-        }));
-        this.table.renderRows();
-      }
+      this.aplicaciones$ = this.aplicacionService.getAplicaciones();
+      // if (result) {
+      //   this.aplicaciones$ = this.aplicacionService.getAplicaciones().pipe(map((value) => {
+      //     const newvalue = value.filter(value2 => {
+      //       return value2.id !== result;
+      //     });
+      //     return newvalue;
+      //   }));
+      //   this.table.renderRows();
+      // }
     });
+  }
+
+  getEstado(aplicacion) {
+    enum EstadoEnum {
+      'Activo' = 'activo',
+      'Inactivo' = 'inactivo',
+    }
+    const indexOfS = Object.values(EstadoEnum)
+      .indexOf(aplicacion.status as unknown as EstadoEnum);
+    const key = Object.keys(EstadoEnum)[indexOfS];
+    return key;
   }
 }
 

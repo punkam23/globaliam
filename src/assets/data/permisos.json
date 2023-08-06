@@ -2,19 +2,37 @@
   {
     "id": 1,
     "name": "Permiso 1",
-    "description": "Descripción del Permiso numero 1",
+    "description": "Descripción del Permiso número 1",
     "status": "Activo"
   },
   {
     "id": 2,
     "name": "Permiso 2",
-    "description": "Descripción del Permiso numero 2",
+    "description": "Descripción del Permiso número 2",
     "status": "Activo"
   },
   {
     "id": 3,
     "name": "Permiso 3",
-    "description": "Descripción del Permiso numero 3",
+    "description": "Descripción del Permiso número 3",
+    "status": "Activo"
+  },
+  {
+    "id": 4,
+    "name": "Permiso 4",
+    "description": "Descripción del Permiso número 4",
+    "status": "Activo"
+  },
+  {
+    "id": 5,
+    "name": "Permiso 5",
+    "description": "Descripción del Permiso número 5",
+    "status": "Activo"
+  },
+  {
+    "id": 6,
+    "name": "Permiso 6",
+    "description": "Descripción del Permiso número 6",
     "status": "Activo"
   }
 ]

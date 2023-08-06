@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from './_models/user.interface';
 import {AccountService} from './_services/userAuth.service';
 
@@ -7,7 +7,7 @@ import {AccountService} from './_services/userAuth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   user?: User | null;
 
   constructor(private accountService: AccountService) {
@@ -16,5 +16,9 @@ export class AppComponent {
 
   logout() {
     this.accountService.logout();
+  }
+
+  ngOnInit(): void {
+    // console.log('test');
   }
 }

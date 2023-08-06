@@ -1,5 +1,5 @@
 <div class="dialog-container">
-<h1 mat-dialog-title class="fa fa-pencil icon-title-center"></h1>
+<h1 mat-dialog-title class="fa fa-pencil icon-title-center" aria-label="edicion"></h1>
 <h1 mat-dialog-title class="title-center">Actualización de Usuario</h1>
 <div mat-dialog-content class="title-center">
   <mat-form-field>
@@ -8,19 +8,38 @@
   </mat-form-field>
   <mat-form-field>
     <mat-label style="color: black; font-size: 20px">Apellidos de Usuario</mat-label>
-    <input matInput placeholder="Placeholder" [formControl]="apellidos">
+    <input matInput placeholder="Apellidos de Usuario" [formControl]="apellidos">
   </mat-form-field>
   <mat-form-field>
-    <mat-label style="color: black; font-size: 20px">Correo electronico</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+    <mat-label style="color: black; font-size: 20px">Correo electrónico</mat-label>
+    <input matInput placeholder="correo@ejemplo.com" [formControl]="email" required>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <mat-label style="color: black; font-size: 20px">Select</mat-label>
-    <mat-select style="color: black; font-size: 20px">
+    <mat-label style="color: black; font-size: 20px">Autenticaciónn</mat-label>
+    <mat-select style="color: black; font-size: 20px" [formControl]="autenticacion" [(value)]="userValue.autenticacion">
       <mat-option value="mfa">Doble Factor de autenticación</mat-option>
       <mat-option value="bio">Biometría</mat-option>
       <mat-option value="otp">OTP SMS</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label style="color: black; font-size: 20px">Roles</mat-label>
+    <mat-select style="color: black; font-size: 20px" [formControl]="roles" multiple>
+      <mat-select-trigger style="color: black; font-size: 20px">
+        {{roles.value[0] || ''}}
+        <span *ngIf="(roles.value.length || 0) > 1" style="color: black; font-size: 20px" class="example-additional-selection">
+        (+{{(roles.value.length || 0) - 1}} {{roles.value.length === 2 ? 'rol' : 'roles'}})
+      </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let rol of listaRoles" [value]="rol" >{{rol}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label style="color: black; font-size: 20px">Estado</mat-label>
+    <mat-select style="color: black; font-size: 20px" [formControl]="estado" [(value)]="userValue.status">
+      <mat-option value="activo">Activo</mat-option>
+      <mat-option value="inactivo">Inactivo</mat-option>
     </mat-select>
   </mat-form-field>
 </div>

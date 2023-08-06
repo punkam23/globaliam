@@ -3,7 +3,7 @@ export interface UserInterface {
   name?: string;
   apellidos?: string;
   sistemas?: string;
-  roles?: string;
+  roles?: string [];
   status?: string;
   email?: string;
   autenticacion?: string;

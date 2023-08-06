@@ -5,11 +5,26 @@
 .toolbar {
   background: mediumseagreen;
 }
-
+.example-card {
+  width: 350px;
+  height: 250px;
+  margin: 10px;
+  border: 2px solid gray;
+}
 .image-globalIam {
   width: 60px;
   margin-right: 20px;
   margin-left: 20px;
+}
+.mat-card-header{
+  justify-content: space-around;
+  .mat-card-header-text {
+    color: white;
+    width: 80px;
+    .fa {
+      font-size: 35px;
+    }
+  }
 }
 
 .button-mat {
@@ -59,13 +74,26 @@
   margin-left: 20px;
 }
 
+.card-container {
+  bottom: 158px;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  align-content: stretch;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 .detail-info-title {
   margin-top: 50px;
   font-size: 66px;
+  text-align: end;
 }
 
 .detail-info {
   margin-top: 50px;
+  text-align: end;
 }
 
 

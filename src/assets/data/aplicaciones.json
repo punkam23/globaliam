@@ -2,21 +2,21 @@
   {
     "id": 1,
     "name": "Sistema 1",
-    "description": "Descripción del Sistema numero 1",
+    "description": "Descripción del Sistema número 1",
     "status": "Activo",
     "roles": "Role 1"
   },
   {
     "id": 2,
     "name": "Sistema 2",
-    "description": "Descripción del Sistema numero 2",
+    "description": "Descripción del Sistema número 2",
     "status": "Activo",
     "roles": "Role 2"
   },
   {
     "id": 3,
     "name": "Sistema 3",
-    "description": "Descripción del Sistema numero 3",
+    "description": "Descripción del Sistema número 3",
     "status": "Activo",
     "roles": "Role 3"
   }

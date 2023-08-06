@@ -4,4 +4,5 @@ export interface RolInterface {
   permisos?: string;
   status?: boolean;
   description?: string;
+  sistema?: string;
 }

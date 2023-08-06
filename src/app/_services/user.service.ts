@@ -27,7 +27,9 @@ export class UserService {
           email: user.username,
           name: user.firstName,
           apellidos: user.lastName,
-          status: user.state
+          status: user.state,
+          autenticacion: user.autenticacion,
+          roles: user.roles
         };
         userInterfaceList.push(userInterface);
       });
