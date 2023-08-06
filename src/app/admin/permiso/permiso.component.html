@@ -1,3 +1,9 @@
+<div>
+  <h1 style="color: darkslategray; margin-bottom: 2.5rem">Administración de Permisos</h1>
+  <h3 style="color: darkslategray; margin-bottom: 2.5rem">Los permisos son un conjunto de políticas que especifican qué
+    acciones pueden realizar los usuarios, grupos y roles en los recursos del aplicativo. Estas políticas definen el
+    nivel de acceso y control que tienen los usuarios.</h3>
+</div>
 <table mat-table [dataSource]="permisos$ | async" class="mat-elevation-z8">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Nombre del Permiso</th>

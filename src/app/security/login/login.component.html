@@ -1,10 +1,11 @@
 <div class="loging-section">
-  <div class="card">
-    <h1 class="card-header">Inicio de Sesion</h1>
+  <div class="card border-style" style="width: 30%">
+    <h1 class="card-header" style="text-align: center; border: 0">Sistema de Gestion de Accesos</h1>
+    <h2 class="card-header" style="text-align: center; border: 0">Inicio de Sesión</h2>
     <div class="card-body">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="mb-3">
-          <label class="form-label">Inicia sesion y comienza a gestionar los permisos de usuarios!</label>
+          <label class="form-label mat-h2">Inicia sesión y comienza a gestionar los permisos de usuarios!</label>
           <input type="text" formControlName="username" placeholder="usuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">El nombre de usuario es requerido</div>
@@ -17,13 +18,13 @@
           </div>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-between">
-          <a routerLink="../register" class="btn btn-link">Registrarme</a>
-          <a routerLink="../forgotpass" class="btn btn-link">Olvide mi contraseña</a>
+          <a routerLink="../register" class="btn btn-link"><span class="mat-h2">Registrarme</span></a>
+          <a routerLink="../forgotpass" class="btn btn-link"><span class="mat-h2">Olvide mi contraseña</span></a>
         </div>
         <div class="d-grid gap-2">
           <button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-            Iniciar Sesion
+            Iniciar Sesión
           </button>
         </div>
       </form>

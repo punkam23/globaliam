@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {HomeComponent} from './home';
@@ -17,6 +17,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {InitialPageComponent} from './initial-page';
 import {AlertComponent} from './_alert';
+import {AplicacionService} from './_services';
+
+export function loadDataFactory(dataService: AplicacionService) {
+  return () => dataService.initAplicaciones();
+}
 
 @NgModule({
   declarations: [
@@ -41,7 +46,13 @@ import {AlertComponent} from './_alert';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
+    AplicacionService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: loadDataFactory,
+      deps: [AplicacionService],
+      multi: true
+    },
     // provider used to create fake backend
     fakeBackendProvider
   ],

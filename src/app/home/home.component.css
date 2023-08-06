@@ -3,7 +3,7 @@
 }
 
 .example-card {
-  width: 300px;
+  width: 350px;
   height: 250px;
   margin: 10px;
   border: 2px solid gray;
@@ -20,7 +20,7 @@
     margin-top: 120px;
     .crear-button {
       margin-top: 50px;
-      background: #2E3647;
+      background: #3cb371;
     }
   }
 }
@@ -28,17 +28,15 @@
 
 
 .card-style {
-  height: 400px;
   background: gray;
   margin-bottom: 60px;
   display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
   margin-left: 100px;
   margin-right: 100px;
 }
 
 .image-position {
   width: 450px;
-  position: absolute;
-  bottom: -11px;
-  right: 40px;
 }

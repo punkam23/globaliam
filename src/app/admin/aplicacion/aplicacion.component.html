@@ -1,3 +1,8 @@
+<div>
+  <h1 style="color: darkslategray; margin-bottom: 2.5rem">Administración de Sistemas</h1>
+  <h3 style="color: darkslategray; margin-bottom: 2.5rem">Hay varios software que se integran a la solución de Gestión
+    de Identidad. En está sección se podrán ingresar todas las aplicaciones a las que se desea integrar.</h3>
+</div>
 <table mat-table [dataSource]="aplicaciones$ | async" class="mat-elevation-z8">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Nombre del Sistema</th>
@@ -9,7 +14,7 @@
   </ng-container>
   <ng-container matColumnDef="status">
     <th mat-header-cell *matHeaderCellDef> Estado </th>
-    <td mat-cell *matCellDef="let aplicacion"> {{aplicacion.status}} </td>
+    <td mat-cell *matCellDef="let aplicacion"> {{getEstado(aplicacion)}} </td>
   </ng-container>
   <ng-container matColumnDef="roles">
     <th mat-header-cell *matHeaderCellDef> Roles </th>

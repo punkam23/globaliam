@@ -10,9 +10,12 @@ import {
 import {Observable, of, throwError} from 'rxjs';
 import {delay, dematerialize, materialize} from 'rxjs/operators';
 import {User} from '../_models';
+import {AplicacionInterface} from '../admin/aplicacion/aplicacion.interface';
 
 const usersKey = 'global-iam-user';
+const aplicacionesKey = 'global-iam-aplicaciones';
 let users: any[] = JSON.parse(localStorage.getItem(usersKey)!) || [];
+const aplicaciones: any[] = JSON.parse(localStorage.getItem(aplicacionesKey)!) || [];
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -34,6 +37,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return updateUser();
         case url.match(/\/users\/\d+$/) && method === 'DELETE':
           return deleteUser();
+        case url.endsWith('/aplicaciones') && method === 'GET':
+          return getAplicaciones();
+        case url.match(/\/aplicaciones\/\d+$/) && method === 'PUT':
+          return updateAplicacion();
         default:
           // pass through any requests not handled above
           return next.handle(request);
@@ -78,6 +85,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       return ok(users.map(x => basicDetails(x)));
     }
 
+    function getAplicaciones() {
+      if (!isLoggedIn()) {
+        return unauthorized();
+      }
+      return ok(aplicaciones.map(x => basicDetailsAplicacion(x)));
+    }
+
     function getUserById() {
       if (!isLoggedIn()) {
         return unauthorized();
@@ -96,18 +110,22 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       if (!params.password) {
         delete params.password;
       }
-      if (!params.username) {
-        delete params.username;
-      }
-      if (!params.firstName) {
-        delete params.firstName;
-      }
-      if (!params.lastName) {
-        delete params.lastName;
-      }
       // update and save user
       Object.assign(user, params);
       localStorage.setItem(usersKey, JSON.stringify(users));
+
+      return ok();
+    }
+
+    function updateAplicacion() {
+      if (!isLoggedIn()) {return unauthorized(); }
+
+      const params: AplicacionInterface = body;
+      const aplicacion = aplicaciones.find(x => x.id === idFromUrl());
+
+      // update and save user
+      Object.assign(aplicacion, params);
+      localStorage.setItem(aplicacionesKey, JSON.stringify(aplicaciones));
 
       return ok();
     }
@@ -142,8 +160,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function basicDetails(user: any) {
-      const { id, username, firstName, lastName, state } = user;
-      return { id, username, firstName, lastName, state };
+      const { id, username, firstName, lastName, state, autenticacion, roles } = user;
+      return { id, username, firstName, lastName, state, autenticacion, roles };
+    }
+
+    function basicDetailsAplicacion(aplicacion: any) {
+      const { id, name, description, roles, status } = aplicacion;
+      return { id, name, description, roles, status };
     }
 
     function isLoggedIn() {

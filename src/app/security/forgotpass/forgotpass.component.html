@@ -4,26 +4,26 @@
             <h1 class="card-title text-center mb-4">Recuperar Contraseña</h1>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Ingresa tu correo electrónico, para poder enviarte el link de recuperación</label>
+                    <label for="email" class="form-label mat-h2">Ingresa tu correo electrónico, para poder enviarte el link de recuperación</label>
                     <input type="email" formControlName="username" class="form-control" id="username" placeholder="ejem@domain.com" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" (change)="onInputChange()" >
                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                         <div *ngIf="f.username.errors.required">El correo electrónico es requerido</div>
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-between">
-                    <button [disabled]="loading" class="btn btn-primary"> 
-                        <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm me-1 mat-h2"></span>
                         Enviar Correo de Recuperación</button>
-                    <a routerLink="../login" class="btn btn-link">Cancelar</a>
+                  <a routerLink="../login" class="btn btn-link"><span class="mat-h2">Cancelar</span></a>
                 </div>
             </form>
           </div>
         </div>
         <div class="card-body" *ngIf="showNotification && !f.username.errors && submitted && !loading">
           <h1 class="card-header text-center mb-4">Listo!</h1>
-            <p class="note">{{ notificationMessage }}</p> 
+            <p class="note mat-h2">{{ notificationMessage }}</p>
               <div class="d-grid gap-2">
-                <button [disabled]="loading" class="btn btn-primary" routerLink="../login"> 
+                <button [disabled]="loading" class="btn btn-primary" routerLink="../login">
                   <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
                   Regresar</button>
               </div>

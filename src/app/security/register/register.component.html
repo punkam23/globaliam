@@ -4,28 +4,28 @@
         <h1 class="card-title text-center mb-4">Registro de usuario</h1>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="mb-3">
-            <label class="form-label">Nombre</label>
+            <label class="form-label mat-h2">Nombre</label>
             <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
               <div *ngIf="f.firstName.errors.required">El primer nombre es requerido</div>
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Apellido</label>
+            <label class="form-label mat-h2">Apellido</label>
             <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
               <div *ngIf="f.lastName.errors.required">El apellido es requerido</div>
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Nombre de usuario</label>
+            <label class="form-label mat-h2">Nombre de usuario</label>
             <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
               <div *ngIf="f.username.errors.required">El nombre de usuario es requerido</div>
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Contraseña</label>
+            <label class="form-label mat-h2">Contraseña</label>
             <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
               <div *ngIf="f.password.errors.required">La contraseña es requerida</div>
@@ -37,7 +37,7 @@
               <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
               Registrarme
             </button>
-            <a routerLink="../login" class="btn btn-link">Cancelar</a>
+            <a routerLink="../login" class="btn btn-link"><span class="mat-h2">Cancelar</span></a>
           </div>
         </form>
       </div>
@@ -45,5 +45,5 @@
     <div class="card-footer text-muted text-center footer-with-svg">
       <div class="svg-background"></div>
     </div>
-  
+
 </div>

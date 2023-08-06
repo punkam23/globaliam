@@ -1,3 +1,8 @@
+<div>
+  <h1 style="color: darkslategray; margin-bottom: 2.5rem">Administración de Roles</h1>
+  <h3 style="color: darkslategray; margin-bottom: 2.5rem">Un rol es una entidad de seguridad en una cuenta de servicios
+    que define una serie de permisos que se pueden asumir los usuarios.</h3>
+</div>
 <table mat-table [dataSource]="roles$ | async" class="mat-elevation-z8">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Nombre del Rol</th>
@@ -10,6 +15,10 @@
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef> Estado </th>
     <td mat-cell *matCellDef="let rol"> {{rol.status}} </td>
+  </ng-container>
+  <ng-container matColumnDef="sistema">
+    <th mat-header-cell *matHeaderCellDef> Sistema </th>
+    <td mat-cell *matCellDef="let rol"> {{rol.sistema}} </td>
   </ng-container>
   <ng-container matColumnDef="status">
     <th mat-header-cell *matHeaderCellDef> Permisos </th>
