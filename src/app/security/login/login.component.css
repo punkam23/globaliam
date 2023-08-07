@@ -5,6 +5,30 @@
     align-content: center;
     align-items: center;
 }
+
+h1.card-header{
+font-size: 60px;
+}
+@media screen  and (max-width: 1300px) {
+  h1.card-header{
+   font-size: 50px;
+  }
+}
+
+.loging-form{
+  min-width: 600px;
+}
+@media screen  and (max-width: 780px) {
+  .loging-form{
+    min-width: 500px;
+  }
+}
+@media screen  and (max-width: 480px) {
+  .loging-form{
+    min-width: 300px;
+  }
+}
+
 .card-footer {
     position: fixed;
     left: 0;
