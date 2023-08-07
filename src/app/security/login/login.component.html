@@ -26,6 +26,9 @@
             <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
             Iniciar Sesión
           </button>
+          <button [disabled]="loading" class="btn btn-secondary" (click)="logout()">
+            Regresar
+          </button>
         </div>
       </form>
     </div>

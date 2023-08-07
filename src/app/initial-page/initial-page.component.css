@@ -1,9 +1,10 @@
-.example-spacer {
-  flex: 1 1 auto;
-}
-
 .toolbar {
   background: mediumseagreen;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
 }
 .example-card {
   width: 350px;
@@ -26,12 +27,10 @@
     }
   }
 }
-
 .button-mat {
   background: darkslategray;
   margin-right: 10px;
 }
-
 .card-footer {
   position: fixed;
   left: 0;
@@ -40,7 +39,6 @@
   background-color: #d9cbcb14;
   padding: 40px;
 }
-
 .footer-with-svg{
   position: relative;
   min-height: 100%;
@@ -49,7 +47,6 @@
   background-repeat: no-repeat;
   z-index: -1;
 }
-
 .box {
   padding-top: 20px;
   display: grid;
@@ -127,3 +124,8 @@ display: grid;
 grid-template-columns: 1fr;
 }
 
+@media screen  and (max-width: 768px) {
+  .home-page {
+    grid-template-columns: 0.5fr;
+  }
+}
