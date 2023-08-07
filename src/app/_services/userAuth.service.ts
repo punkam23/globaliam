@@ -57,6 +57,10 @@ export class AccountService {
     return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
   }
 
+  updatepass(id: string, params: any) {
+    return this.http.put(`${environment.apiUrl}/users/updatepass/${id}`, params).subscribe();
+  }
+
   update(id: string, params: any) {
     return this.http.put(`${environment.apiUrl}/users/${id}`, params).pipe()
       .subscribe(() => {
